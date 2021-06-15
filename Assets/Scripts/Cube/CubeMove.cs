@@ -26,7 +26,7 @@ namespace Game.Cube
             state.SetTransforms(state.Transform, transform);
         }
 
-        void Update()
+        public override void SimulateOwner()
         {
             moveVec.x = Input.GetAxis("Horizontal");
             moveVec.z = Input.GetAxis("Vertical");
