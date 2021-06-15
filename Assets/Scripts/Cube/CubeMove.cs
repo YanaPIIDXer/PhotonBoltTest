@@ -8,7 +8,7 @@ namespace Game.Cube
     /// <summary>
     /// キューブの移動
     /// </summary>
-    public class CubeMove : MonoBehaviour
+    public class CubeMove : EntityBehaviour<ICubeState>
     {
         /// <summary>
         /// 移動ベクトル
@@ -20,21 +20,14 @@ namespace Game.Cube
         /// </summary>
         private Rigidbody rigidBody = null;
 
-        /// <summary>
-        /// BoltEntity
-        /// </summary>
-        private BoltEntity entity = null;
-
-        void Awake()
+        public override void Attached()
         {
             rigidBody = GetComponent<Rigidbody>();
-            entity = GetComponent<BoltEntity>();
+            state.SetTransforms(state.Transform, transform);
         }
 
         void Update()
         {
-            if (!entity.IsOwner) { return; }
-
             moveVec.x = Input.GetAxis("Horizontal");
             moveVec.z = Input.GetAxis("Vertical");
         }
