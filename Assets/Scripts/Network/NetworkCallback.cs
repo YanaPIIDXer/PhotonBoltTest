@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Bolt;
 using Photon.Bolt.Matchmaking;
 using System;
+using UdpKit;
 
 namespace Game.Network
 {
@@ -22,9 +23,25 @@ namespace Game.Network
             {
                 BoltMatchmaking.CreateSession(Guid.NewGuid().ToString(), null, "Game");
             }
-            else
+        }
+
+        /// <summary>
+        /// セッションリストが更新された
+        /// </summary>
+        /// <param name="sessionList">セッションリスト</param>
+        public override void SessionListUpdated(Map<Guid, UdpSession> sessionList)
+        {
+            Debug.LogFormat("Session list updated: {0} total sessions", sessionList.Count);
+
+            foreach (var session in sessionList)
             {
-                Debug.Log("Bolt start as Client!");
+                UdpSession photonSession = session.Value as UdpSession;
+
+                if (photonSession.Source == UdpSessionSource.Photon)
+                {
+                    BoltMatchmaking.JoinSession(photonSession);
+                    break;
+                }
             }
         }
 
