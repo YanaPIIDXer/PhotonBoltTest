@@ -60,3 +60,4 @@ crashlytics-build.properties
 
 .vscode/
 Assets/Photon/PhotonBolt/resources/BoltRuntimeSettings.asset
+Application/
