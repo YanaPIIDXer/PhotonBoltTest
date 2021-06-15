@@ -12,6 +12,21 @@ namespace Game.Network
     public class NetworkCallback : GlobalEventListener
     {
         /// <summary>
+        /// Bolt起動
+        /// </summary>
+        public override void BoltStartDone()
+        {
+            if (BoltNetwork.IsServer)
+            {
+                Debug.Log("Bolt start as Server!");
+            }
+            else
+            {
+                Debug.Log("Bolt start as Client!");
+            }
+        }
+
+        /// <summary>
         /// シーンロードが完了した
         /// </summary>
         /// <param name="scene">シーン名</param>
