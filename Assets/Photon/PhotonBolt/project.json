@@ -156,6 +156,29 @@
       "Name": "CubeState",
       "Guid": "4cf8c8ef-ce95-420c-b30d-d0aa51cf6739",
       "Groups": []
+    },
+    {
+      "$type": "Photon.Bolt.Compiler.EventDefinition, bolt.compiler",
+      "Properties": [
+        {
+          "Name": "Message",
+          "Enabled": true,
+          "Expanded": true,
+          "ReplicationMode": 1,
+          "Priority": 1,
+          "PropertyType": {
+            "$type": "Photon.Bolt.Compiler.PropertyTypeString, bolt.compiler",
+            "MaxLength": 140,
+            "Encoding": 1
+          },
+          "AssetSettings": {
+            "$type": "Photon.Bolt.Compiler.PropertyEventSettings, bolt.compiler"
+          }
+        }
+      ],
+      "Name": "LogEvent",
+      "Guid": "2bad5806-a0f3-4f38-8bb2-02ca36d874e5",
+      "Groups": []
     }
   ],
   "ActiveGroup": "Everything"
