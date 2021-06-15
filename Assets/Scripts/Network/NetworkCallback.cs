@@ -54,7 +54,7 @@ namespace Game.Network
         {
             if (scene != "Game") { return; }
 
-            var pos = new Vector3(UnityEngine.Random.Range(-3.0f, 3.0f), 3.0f, UnityEngine.Random.Range(-3.0f, 3.0f));
+            var pos = new Vector3(UnityEngine.Random.Range(-3.0f, 3.0f), 0.2f, UnityEngine.Random.Range(-3.0f, 3.0f));
             BoltNetwork.Instantiate(BoltPrefabs.Cube, pos, Quaternion.identity);
         }
     }
