@@ -176,6 +176,8 @@
           }
         }
       ],
+      "EntitySenders": 3,
+      "GlobalSenders": 1,
       "Name": "LogEvent",
       "Guid": "2bad5806-a0f3-4f38-8bb2-02ca36d874e5",
       "Groups": []
