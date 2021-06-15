@@ -52,7 +52,10 @@ namespace Game.Network
         /// <param name="token">プロトコルトークン</param>
         public override void SceneLoadLocalDone(string scene, IProtocolToken token)
         {
-            Debug.Log("Scene:" + scene);
+            if (scene != "Game") { return; }
+
+            var pos = new Vector3(UnityEngine.Random.Range(-3.0f, 3.0f), 3.0f, UnityEngine.Random.Range(-3.0f, 3.0f));
+            BoltNetwork.Instantiate(BoltPrefabs.Cube, pos, Quaternion.identity);
         }
     }
 }
