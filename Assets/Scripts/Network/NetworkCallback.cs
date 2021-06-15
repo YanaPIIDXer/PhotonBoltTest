@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Bolt;
+using Photon.Bolt.Matchmaking;
+using System;
 
 namespace Game.Network
 {
@@ -18,7 +20,7 @@ namespace Game.Network
         {
             if (BoltNetwork.IsServer)
             {
-                Debug.Log("Bolt start as Server!");
+                BoltMatchmaking.CreateSession(Guid.NewGuid().ToString(), null, "Game");
             }
             else
             {
